@@ -1,16 +1,20 @@
-import { Route, Switch} from 'react-router-dom';
+import { Route, Switch, Redirect} from 'react-router-dom';
 import './App.css';
 import Layout from './Component/Layout/Layout'
-import Main from './Container/Main/Main'
+import ContactAdd from './Container/Contact-Add/Contact-Add'
+import Contacts from './Container/Contacts/Contacts'
+import About from './Component/About/About'
 function App() {
   return (
     <div className="App">
       <Layout>
+        
         <Switch>
-          <Route path="/" exact component={Main}></Route>
-          <Route path="/add" component={Main}></Route>
-          <Route path="/about" component={Main}></Route>
+          <Route path="/add" component={ContactAdd}></Route> 
+          <Route path="/about" component={About}></Route>
+          <Route path="/" exact component={Contacts}></Route>
         </Switch>
+       
       </Layout>
       
       

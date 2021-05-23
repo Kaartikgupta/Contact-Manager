@@ -1,14 +1,22 @@
 .Toolbar{
-    height: 56px;
+    height: 45px;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: orange;
-     display: flex;
-    /*justify-content: space-between;*/
+    background-color: rgb(236, 32, 59);
+    display: flex;
+    justify-content: space-between;
     align-items: center; 
-    padding: 0 20px;
+    padding: 0 100px;
     box-sizing: border-box;
     z-index: 90;
+
+}
+
+.Title{
+    color: antiquewhite;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 20px;
 }

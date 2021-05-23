@@ -1,0 +1,12 @@
+p{
+    margin-top: 0px;
+    margin-bottom: 5px;
+    background-color: white;
+    padding: 0px;
+}
+.contact{
+    margin-top: 2px;
+    border: 2px solid gray;
+    margin-left: 100px;
+    margin-right: 100px;
+}

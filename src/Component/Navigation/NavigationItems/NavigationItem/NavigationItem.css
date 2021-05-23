@@ -1,26 +1,21 @@
 .NavigationItem{
-    margin:10px 0;
-        box-sizing: border-box;
-        display: block;
-        
-        width: 100%;
+    margin:5px 15px 10px 0;
+    box-sizing: border-box;
+    display: block;    
+    width: 100%;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 .NavigationItem a{
-    color: rgb(228, 92, 13);
-        text-decoration: none;
-        width: 100%;
-        
-        box-sizing: border-box;
-        display: block;
-
+    text-decoration: none;
+    color: rgb(201, 201, 201);
 }
 .NavigationItem a:hover,
 .NavigationItem a:active,
 .NavigationItem a.active{
-   
-    color: rgb(24, 126, 216);
+    color: rgb(255, 248, 248);
 }
-@media(min-width:500px){
+/* @media(min-width:500px){
     .NavigationItem{
         margin:0;
         box-sizing: border-box;
@@ -46,4 +41,4 @@
     border-bottom: 4px solid blue;
     color: aliceblue;
     }
-}
+} */
