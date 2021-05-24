@@ -10,3 +10,15 @@ p{
     margin-left: 100px;
     margin-right: 100px;
 }
+
+.contact p{
+    background-color: white;
+}
+p a{
+    text-decoration: none;
+    color: rgb(61, 60, 60);
+}
+a:hover,
+a:active{
+    color: rgb(7, 7, 7);
+}

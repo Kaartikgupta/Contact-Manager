@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from '../../axios-order'
 import './Contact-Add.css'
-import {Redirect,Link , NavLink} from 'react-router-dom'
 class Contacts extends Component{
     state={
         nameInput: "",

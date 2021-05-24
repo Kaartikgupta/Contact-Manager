@@ -7,6 +7,7 @@ class Contacts extends Component{
         nameInput: "",
         emailInput: "",
         contactInput: "",
+        id:"",
         contact:[]
     }
     componentDidMount(){
@@ -14,9 +15,10 @@ class Contacts extends Component{
         axios.get('/contact.json')
         .then((res)=>{
         for(let key in res.data){
-            contact.push({...this.state,nameInput: res.data[key].Name, emailInput:res.data[key].Email, contactInput:res.data[key].Contact})
+            contact.push({...this.state,nameInput: res.data[key].Name, emailInput:res.data[key].Email, contactInput:res.data[key].Contact,id: key})
         }
         this.setState({contact:contact}) })
+        console.log(contact)
     }
     render(){
         return(
@@ -26,8 +28,11 @@ class Contacts extends Component{
                     this.state.contact.map((res,key)=>(<Contact name={res.nameInput} 
                                                                 email={res.emailInput} 
                                                                 contact={res.contactInput} 
+                                                                id={res.id}
                                                                 key={key} />))
+                                                               
                 }
+                
             </div>
         )
     }
