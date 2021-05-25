@@ -20,6 +20,7 @@ class EditContact extends Component{
     async componentDidMount() {
         const idd  = (this.props.location.search.substring(1))
         const res = await axios.get(
+
           '/contact.json'
         );
         const contact = res.data 
@@ -42,22 +43,25 @@ class EditContact extends Component{
           emailInput: finalobj.data.Email,
           contactInput: finalobj.data.Contact
         });
-        console.log(finalobj)
+        // console.log(finalobj)
       }
     submitHandler=(e)=>{
         e.preventDefault();
-        // const contact={
-        //     Name: this.state.nameInput,
-        //     Email: this.state.emailInput,
-        //     Contact: this.state.contactInput
-        // };
-
-        // axios.post('/contact.json',contact)
-        // .then(this.setState({nameInput:"",emailInput:"",contactInput:""}))
-        // .catch(error=>{console.log(error)})
-        // this.props.history.push('/');
-        
-        
+        const idd  = (this.props.location.search.substring(1))
+        const con={
+            Name: this.state.nameInput,
+            Email: this.state.emailInput,
+            Contact: this.state.contactInput
+        }
+        axios.put('/contact/'+idd+'.json',con)
+        .then(this.setState({nameInput:"",emailInput:"",contactInput:""}))
+        .catch(error=>{console.log(error)})
+        console.log(con)
+    }
+    deleteHandler=()=>{
+        const idd  = (this.props.location.search.substring(1))
+        axios.delete('/contact/'+idd+'.json')
+        // this.props.history.push('/')
     }
     render(){
         return(
@@ -71,7 +75,9 @@ class EditContact extends Component{
                     <label>Email</label>
                     <input type="email" placeholder="Edit Email..." onChange={this.setEmailInput} value={this.state.emailInput}></input>
                     <button>Edit Contact</button>
+                    
                 </form>
+                <button onClick={this.deleteHandler} style={{cursor:'pointer',marginLeft:'312px'}}>Delete Contact</button>
                 
             </div>
         )

@@ -28,7 +28,8 @@ class Contacts extends Component{
         axios.post('/contact.json',contact)
         .then(this.setState({nameInput:"",emailInput:"",contactInput:""}))
         .catch(error=>{console.log(error)})
-        // this.props.history.push('/');
+        // this.props.history.goBack();
+        
         
     }
     render(){
